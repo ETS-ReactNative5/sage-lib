@@ -16,6 +16,8 @@ $-search-icon: "::before";
   align-items: center;
   position: relative;
   background-color: sage-color(white);
+  border: sage-border();
+  border-color: transparent;
 
   &#{$-search-icon} {
     @include sage-icon-base(search);
