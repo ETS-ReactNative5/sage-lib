@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency "rails"
   s.add_runtime_dependency "classy_hash"
+  s.add_runtime_dependency "simple_form", "~> 5.0.0"
 
   s.add_development_dependency "pry"
 end
