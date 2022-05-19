@@ -88,19 +88,19 @@ module SageClassnamesHelper
               if classnames_child.keys.include? sub_value.to_sym
                 classes.push(classnames_child[sub_value.to_sym])
               else
-                classes.push("sage-nil--#{key}-#{sub_value}")
+                raise "Could not find the `#{sub_value}` for the key `#{key}` for `sage_classnames`"
               end
             end
           elsif classnames_child.keys.include? value.to_sym
             classes.push(classnames_child[value.to_sym])
           else
             # Output a nil class with the key and value as a modifier
-            classes.push("sage-nil--#{key}-#{value}")
+            raise "Could not find the `#{value}` for the key `#{key}` for `sage_classnames`"
           end
         end
       else
         # Output a nil class with the key as a modifier
-        classes.push("sage-nil--#{key}")
+        raise "Could not find the key `#{key}` for `sage_classnames`"
       end
     end
 

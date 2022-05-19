@@ -43,6 +43,41 @@ end
 </p>
 )) %>
 <% end %>
+
+<%= sage_component SageList, {} do %>
+  <% SageClassnames.constants.each do | c | %>
+    <% v = SageClassnames.const_get(c) %>
+    <%= sage_component SageListItem, {} do %>
+      <%= sage_layout SageFrame, { direction: "horizontal", width: "fill" } do %>
+        <%= sage_layout SageFrame, { width_ratio: "1" } do %>
+          <%= md("`#{c}`") %>
+        <% end %>
+        <% if v.is_a?(String) %>
+          <%= sage_layout SageFrame, { width_ratio: "1" } do %>
+            --
+          <% end %>
+          <%= sage_layout SageFrame, { width_ratio: "2" } do %>
+            <%= md("`\"#{v}\"`") %> %>
+          <% end %>
+        <% else %>
+          <% v.constants.each do | c2 | %>
+            <% v2 = v.const_get(c2) %>
+            <%= sage_layout SageFrame, { width_ratio: "1" } do %>
+              <%= md("`#{c2}`") %>
+            <% end %>
+            <%= sage_layout SageFrame, { width_ratio: "1" } do %>
+              <%= md("`\"#{v2}\"`") %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+
+
 <%= sage_layout SageFrame, { gap: "lg", width: "fill" } do %>
   <%= md("
 ### Classnames Helper
