@@ -24,7 +24,7 @@ export const DashboardPanel = () => {
           </p>
         </Panel.Stack>
 
-        <Panel.Divider bleed={true} />
+        <Panel.Divider bleed={true} style={{ height: '0' }} />
 
         {breakpoints.sm ? (
           <GetStartedTabsMobile tabsContent={getStartedTabs} />

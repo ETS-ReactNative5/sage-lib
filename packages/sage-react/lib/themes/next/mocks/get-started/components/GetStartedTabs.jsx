@@ -32,7 +32,7 @@ export const GetStartedTabs = ({ tabsContent }) => {
             itemStyle={Tabs.Item.STYLES.CHOICE}
             panelId={id}
             onClick={() => setActiveTab(id)}
-            style={{ width: '100%', padding: '16px' }}
+            style={{ width: '100%', padding: '10px 16px' }}
           >
             <Frame
               direction={Frame.DIRECTIONS.HORIZONTAL}
@@ -73,6 +73,7 @@ export const GetStartedTabs = ({ tabsContent }) => {
             id={id}
             isActive={id === activeTab}
             key={`get-started-tab-pane-${id}`}
+            panelSpacing={true}
           >
             {graphic}
             <Frame gap={Frame.GAPS.XS}>

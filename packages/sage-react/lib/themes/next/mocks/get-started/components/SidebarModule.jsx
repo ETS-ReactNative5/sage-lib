@@ -17,7 +17,7 @@ export const SidebarModule = ({
   }
 }) => (
   <Frame
-    gap={Frame.GAPS.XS}
+    gap={Frame.GAPS.NONE}
     borderRadius={Frame.BORDER_RADII.SM}
     padding={Frame.PADDINGS.SM}
     background={SageTokens.COLOR_SLIDERS.PRIMARY_300}
@@ -46,6 +46,7 @@ export const SidebarModule = ({
       color={SageTokens.COLOR_PALETTE.WHITE}
       percent={(step / 4) * 100}
       style={{ width: '100%' }}
+      className={SageClassnames.SPACERS.XS_TOP}
     />
   </Frame>
 );
